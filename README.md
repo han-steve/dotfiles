@@ -12,3 +12,5 @@ zsh bootstrap.sh
 This should take care of everything. Afterwards, restart your iTerm, change the font to PowerLine, use base16_ command to change the theme, and you are good to go! 
 
 Enjoy your brand new development set up!
+
+![Screen Shot 2021-01-11 at 2 26 26 PM](https://user-images.githubusercontent.com/36038610/104235095-1568ba80-541a-11eb-9248-5d7ee5f5a6e4.png)
