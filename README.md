@@ -1,6 +1,6 @@
 # Steve Han's dotfiles
 Welcome to my dot files! 
-I have included an installation script that should automate the entire installation process for you!
+I have included an installation script that should automate the entire installation process for you! It will symlink the dotfiles to your root directory and install all the dependencies. 
 ## Usage
 You can start from a brand new installation of MacOS. Just make sure that you have git installed and iTerm installed.
 Then, run the installation script with 
