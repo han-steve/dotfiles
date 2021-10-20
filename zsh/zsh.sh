@@ -19,3 +19,7 @@ ln -nfs $(pwd)/zsh/.zshrc $HOME/.zshrc
 
 # change shell
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+
+# for M1: 
+# sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
+
