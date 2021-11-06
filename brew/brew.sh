@@ -9,3 +9,5 @@ brew install trash;
 brew install visual-studio-code --cask;
 brew install discord --cask;
 brew install --cask slack
+brew install --cask miniconda
+
