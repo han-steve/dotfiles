@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# First, install dev tools
+xcode-select --install
+
 # fonts
 cp fonts/Source\ Code\ Pro\ for\ Powerline.otf $HOME/Library/Fonts/
 
@@ -26,3 +29,10 @@ zsh nvim/nvim.sh
 
 # VSCode
 zsh vscode/vscode.sh
+
+# Python
+zsh python/python.sh
+
+# Conda
+zsh conda/conda.sh
+
