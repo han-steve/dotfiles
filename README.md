@@ -9,7 +9,7 @@ Then, run the installation script with
 zsh bootstrap.sh
 ```
 
-This should take care of everything. Afterwards, restart your iTerm, change the font to PowerLine in Profiles -> Text, change Appearance -> General -> theme to minimal and tab bar location to bottom, use base16_ command to change the theme, and you are good to go! 
+This should take care of everything. Afterwards, restart your iTerm, change the font to PowerLine in Profiles -> Text, change Appearance -> General -> theme to minimal and tab bar location to bottom, use base16_ command to change the theme, and you are good to go! (For example, type in base16_material in the iTerm window and see the effects!)
 
 To fully set up the nvim integration, run vi, type :PlugInstall (before you do this, you would see errors from COC). 
 
