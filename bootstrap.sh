@@ -27,12 +27,12 @@ zsh git/git.sh
 # Nvim
 zsh nvim/nvim.sh
 
-# VSCode
-zsh vscode/vscode.sh
+# VSCode - I don't need this anymore since I'm using vscode settings sync
+# zsh vscode/vscode.sh 
 
 # Python
 zsh python/python.sh
 
-# Conda
-zsh conda/conda.sh
+# Conda - not using it since I choose to do it manually
+# zsh conda/conda.sh
 
