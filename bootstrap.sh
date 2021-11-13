@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-# First, install dev tools
-xcode-select --install
+# First, install dev tools (this should be done before running the script since you wouldn't even have git without this)
+# xcode-select --install
 
 # fonts
 cp fonts/Source\ Code\ Pro\ for\ Powerline.otf $HOME/Library/Fonts/
