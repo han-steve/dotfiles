@@ -16,7 +16,7 @@ To fully set up the nvim integration, run vi, type :PlugInstall (before you do t
 To take advantage of your code autocomplete engine, run :CocInstall coc-pyright in nvim for python autocomplete, and :CocInstall coc-clangd for cpp autocomplete. 
 
 ## Notes
-1. On the M1 Mac, the installation path for brew is /opt/homebrew/bin, which is different than Intel. This breaks the line that changes the shell to ~/local/bin
+1. On the M1 Mac, the installation path for brew is /opt/homebrew/bin, which is different than Intel. This breaks the line that changes the shell to ~/local/bin. Just uncomment the line in zsh.sh
 
 Enjoy your brand new development set up!
 
