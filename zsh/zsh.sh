@@ -17,9 +17,9 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 # symlink dotfile
 ln -nfs $(pwd)/zsh/.zshrc $HOME/.zshrc
 
-# change shell
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+# change shell for intel:
+# sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
 # for M1: 
-# sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
+sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
 
