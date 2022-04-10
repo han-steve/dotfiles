@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# need this for m1 mac
+export PATH=/opt/homebrew/bin:$PATH
+
 # for clangd, if coc-clangd can't find it:
 # export PATH=/Library/Developer/CommandLineTools/usr/bin:$PATH
 
@@ -71,7 +74,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z vi-mode history-substring-search zsh-syntax-highlighting)
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+plugins=(zsh-nvm git zsh-z vi-mode history-substring-search zsh-syntax-highlighting)
 
 ZSH_DISABLE_COMPFIX="true"
 
@@ -102,6 +107,7 @@ alias vi="nvim"
 alias viconfig="vi ~/.config/nvim/init.vim"
 alias cocconfig="vi ~/.config/nvim/coc-settings.json"
 alias zshconfig="vi ~/.zshrc"
+alias python="python3"
 
 # base16 theme
 BASE16_SHELL=$HOME/.config/base16-shell/
@@ -113,14 +119,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/stevehan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/stevehan/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/stevehan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/stevehan/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/stevehan/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/stevehan/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/stevehan/miniconda3/bin:$PATH"
+        export PATH="/Users/stevehan/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
