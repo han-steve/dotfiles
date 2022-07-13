@@ -16,6 +16,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'lervag/vimtex'
 
 call plug#end()
 

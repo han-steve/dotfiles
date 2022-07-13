@@ -8,7 +8,7 @@ export PATH=/opt/homebrew/bin:$PATH
 # export PATH=/Library/Developer/CommandLineTools/usr/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stevehan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -76,7 +76,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(zsh-nvm git zsh-z vi-mode history-substring-search zsh-syntax-highlighting)
+plugins=(git zsh-z vi-mode history-substring-search zsh-syntax-highlighting)
 
 ZSH_DISABLE_COMPFIX="true"
 
@@ -107,7 +107,7 @@ alias vi="nvim"
 alias viconfig="vi ~/.config/nvim/init.vim"
 alias cocconfig="vi ~/.config/nvim/coc-settings.json"
 alias zshconfig="vi ~/.zshrc"
-alias python="python3"
+# alias python="python3"
 
 # base16 theme
 BASE16_SHELL=$HOME/.config/base16-shell/

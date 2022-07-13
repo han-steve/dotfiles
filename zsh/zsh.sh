@@ -17,9 +17,16 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 # symlink dotfile
 ln -nfs $(pwd)/zsh/.zshrc $HOME/.zshrc
 
-# change shell for intel:
-# sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-
-# for M1: 
-sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
-
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	chsh -s /bin/zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	if [[ $(uname -m) == 'arm64' ]]; then
+		sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
+	elif [[ $(uname -m) == 'x86_64' ]]; then
+		sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+	else
+		echo "ERROR: not intel or M1"
+	fi
+else 
+	echo "ERROR: unknown OS"
+fi
