@@ -33,5 +33,4 @@ zsh nvim/nvim.sh
 # zsh python/python.sh
 
 # Conda - not using it since I choose to do it manually
-# zsh conda/conda.sh
-
+zsh conda/conda.sh
