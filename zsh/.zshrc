@@ -107,7 +107,7 @@ alias vi="nvim"
 alias viconfig="vi ~/.config/nvim/init.vim"
 alias cocconfig="vi ~/.config/nvim/coc-settings.json"
 alias zshconfig="vi ~/.zshrc"
-alias python="python3"
+# alias python="python3"
 
 # base16 theme
 BASE16_SHELL=$HOME/.config/base16-shell/
