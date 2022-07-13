@@ -5,8 +5,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # link config file
-mkdir ~/.config/nvim
-ln -sfh $(pwd)/nvim/init.vim ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim
+ln -sf $(pwd)/nvim/init.vim ~/.config/nvim/init.vim
 
 # Now we will install the plug ins 
-# nvim -c PlugInstall
+# nvim -c PlugInstall (this doesn't work)
