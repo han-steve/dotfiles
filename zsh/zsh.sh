@@ -14,12 +14,12 @@ ln -s ${ZSH_CUTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-th
 # base16 color theme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
-# symlink dotfile
-ln -nfs $(pwd)/zsh/.zshrc $HOME/.zshrc
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    ln -nfs $(pwd)/zsh/.ubuntu_zshrc $HOME/.zshrc
 	chsh -s /bin/zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
+    ln -nfs $(pwd)/zsh/.zshrc $HOME/.zshrc
 	if [[ $(uname -m) == 'arm64' ]]; then
 		sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
 	elif [[ $(uname -m) == 'x86_64' ]]; then
