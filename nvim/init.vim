@@ -225,3 +225,6 @@ let g:go_highlight_generate_tags = 1
 " --- fzf ---
 nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-b> :Buffers<Cr>
+
+" fix enter not autocompleting
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
