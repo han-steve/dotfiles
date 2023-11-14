@@ -76,7 +76,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(git zsh-z vi-mode history-substring-search zsh-syntax-highlighting)
+plugins=(git zsh-z vi-mode history-substring-search zsh-syntax-highlighting kubectl)
 
 ZSH_DISABLE_COMPFIX="true"
 
