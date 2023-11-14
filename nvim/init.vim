@@ -243,3 +243,5 @@ let g:Tex_IgnoredWarnings =
     \'Citation %.%# undefined'."\n".
     \'Double space found.'."\n"
 let g:Tex_IgnoreLevel = 8
+" fix enter not autocompleting
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"

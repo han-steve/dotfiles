@@ -13,6 +13,8 @@ This should take care of everything. Afterwards, restart your iTerm, change the 
 
 To fully set up the nvim integration, run vi, type :PlugInstall (before you do this, you would see errors from COC). 
 
+To install Tmux plugins, launch tmux and press `prefix + I`.
+
 To take advantage of your code autocomplete engine, run :CocInstall coc-pyright in nvim for python autocomplete, and :CocInstall coc-clangd for cpp autocomplete. 
 
 ## Notes
