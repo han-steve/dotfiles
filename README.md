@@ -17,9 +17,6 @@ To install Tmux plugins, launch tmux and press `prefix + I`.
 
 To take advantage of your code autocomplete engine, run :CocInstall coc-pyright in nvim for python autocomplete, and :CocInstall coc-clangd for cpp autocomplete. 
 
-## Notes
-1. On the M1 Mac, the installation path for brew is /opt/homebrew/bin, which is different than Intel. This breaks the line that changes the shell to ~/local/bin. Just uncomment the line in zsh.sh
-
 Enjoy your brand new development set up!
 
 ![Screen Shot 2021-01-11 at 2 26 26 PM](https://user-images.githubusercontent.com/36038610/104235095-1568ba80-541a-11eb-9248-5d7ee5f5a6e4.png)
