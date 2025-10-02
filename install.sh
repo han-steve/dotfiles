@@ -15,6 +15,9 @@ zsh zsh/zsh.sh
 # Tmux
 zsh tmux/tmux.sh
 
+# AWS
+zsh aws/aws.sh
+
 # nvm
 #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh;
 #source ~/.zshrc;
@@ -27,10 +30,10 @@ zsh tmux/tmux.sh
 zsh nvim/nvim.sh
 
 # VSCode - I don't need this anymore since I'm using vscode settings sync
-# zsh vscode/vscode.sh 
+# zsh vscode/vscode.sh
 
 # Python
 # zsh python/python.sh
 
 # Conda - not using it since I choose to do it manually
-zsh conda/conda.sh
+# zsh conda/conda.sh
