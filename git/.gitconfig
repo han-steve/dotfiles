@@ -1,3 +1,23 @@
 [user]
 	name = Steve Han
 	email = stevehan2001@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	pager = less -FRX
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[alias]
+	s = status -sb
+	l = log --oneline -20
+	d = diff
+	co = checkout
+	br = branch
+	cm = commit -m
+	amend = commit --amend --no-edit
+	undo = reset --soft HEAD~1
+[diff]
+	colorMoved = default

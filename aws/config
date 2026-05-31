@@ -1,7 +1,0 @@
-[profile default]
-sso_start_url = <>
-sso_region = us-east-1
-sso_account_id = <>
-sso_role_name = Poweruser
-region = us-east-1
-output = json

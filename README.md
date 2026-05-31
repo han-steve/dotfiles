@@ -1,22 +1,69 @@
-# Steve Han's dotfiles
-Welcome to my dot files! 
-I have included an installation script that should automate the entire installation process for you! It will symlink the dotfiles to your root directory and install all the dependencies. 
-## Usage
-You can start from a brand new installation of MacOS. Just make sure that you have git installed and iTerm installed.
-Then, run the installation script with 
+# Steve Han's Dotfiles
+
+Cross-platform dev environment for macOS and Ubuntu/Debian servers.
+
+## What's Included
+
+| Tool | Purpose | Replaces |
+|------|---------|----------|
+| [starship](https://starship.rs) | Fast, customizable prompt | oh-my-zsh + spaceship |
+| [zinit](https://github.com/zdharber/zinit) | Lightweight zsh plugin manager | oh-my-zsh |
+| [lazy.nvim](https://github.com/folke/lazy.nvim) | Neovim plugin manager | vim-plug |
+| [catppuccin](https://github.com/catppuccin) | Color scheme (mocha) | base16 |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | Fuzzy finder | fzf.vim |
+| [eza](https://github.com/eza-community/eza) | Modern `ls` | ls |
+| [bat](https://github.com/sharkdp/bat) | Better `cat` | cat |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | Fast `grep` | grep |
+| [fd](https://github.com/sharkdp/fd) | Better `find` | find |
+| tmux + TPM | Terminal multiplexer | — |
+
+Optional: `kubectl`, `k9s`, `helm` (with `--k8s` flag).
+
+## Install
+
+```bash
+git clone https://github.com/han-steve/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+bash install.sh          # standard install
+bash install.sh --k8s    # include k8s tools
+```
+
+Then open a new terminal. Neovim plugins auto-install on first launch.
+
+For tmux plugins: open tmux and press `prefix + I` (Ctrl-A then I).
+
+## Structure
 
 ```
-zsh bootstrap.sh
+install.sh              # One-script installer (macOS + Ubuntu)
+zsh/.zshrc              # Unified zsh config (vi-mode, aliases, lazy nvm)
+starship/starship.toml  # Starship prompt config
+nvim/init.lua           # Neovim entry point
+nvim/lua/options.lua    # Editor options
+nvim/lua/keymaps.lua    # Key bindings
+nvim/lua/plugins.lua    # lazy.nvim plugin specs
+tmux/.tmux.conf         # Tmux config (Ctrl-A prefix, vim nav)
+git/.gitconfig          # Git aliases and defaults
 ```
 
-This should take care of everything. Afterwards, restart your iTerm, change the font to PowerLine in Profiles -> Text, change Appearance -> General -> theme to minimal and tab bar location to bottom, use base16_ command to change the theme, and you are good to go! (For example, type in base16_material in the iTerm window and see the effects!)
+## Key Bindings
 
-To fully set up the nvim integration, run vi, type :PlugInstall (before you do this, you would see errors from COC). 
+### Zsh
+- Vi mode enabled (press Esc for normal mode)
+- `Ctrl+R` — reverse history search
+- Aliases: `ll`, `k`, `kgp`, `vi`, etc.
 
-To install Tmux plugins, launch tmux and press `prefix + I`.
+### Neovim
+- `Space` — leader key
+- `Ctrl+P` — fuzzy file finder
+- `Space+fg` — live grep
+- `Space+e` — file tree
+- `gcc` / `gc` — toggle comment
+- `Space+w` — save, `Space+q` — quit
 
-To take advantage of your code autocomplete engine, run :CocInstall coc-pyright in nvim for python autocomplete, and :CocInstall coc-clangd for cpp autocomplete. 
-
-Enjoy your brand new development set up!
-
-![Screen Shot 2021-01-11 at 2 26 26 PM](https://user-images.githubusercontent.com/36038610/104235095-1568ba80-541a-11eb-9248-5d7ee5f5a6e4.png)
+### Tmux
+- `Ctrl+A` — prefix (not Ctrl+B)
+- `prefix |` — vertical split
+- `prefix -` — horizontal split
+- `prefix r` — reload config
+- `Ctrl+h/j/k/l` — navigate panes (works in nvim too)

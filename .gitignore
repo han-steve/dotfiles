@@ -1,1 +1,7 @@
 .DS_Store
+*.swp
+*.swo
+*~
+.netrwhist
+.nvimlog
+node_modules/
