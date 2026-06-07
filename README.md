@@ -30,6 +30,16 @@ bash install.sh --k8s    # include k8s tools
 
 Then open a new terminal. Neovim plugins auto-install on first launch.
 
+## Homelab Nodes
+
+Ubuntu k3s worker nodes use a separate terminal-only entrypoint so the homelab
+Ansible bootstrap can install the Linux zsh/Starship experience without
+touching the desktop bootstrap:
+
+```bash
+homelab-node/bootstrap.sh --link
+```
+
 For tmux plugins: open tmux and press `prefix + I` (Ctrl-A then I).
 
 ## Structure
