@@ -39,10 +39,33 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             { "<C-p>",      "<cmd>Telescope find_files<CR>" },
+            { "<C-b>",      "<cmd>Telescope buffers<CR>" },
             { "<leader>fg", "<cmd>Telescope live_grep<CR>" },
             { "<leader>fb", "<cmd>Telescope buffers<CR>" },
             { "<leader>fh", "<cmd>Telescope help_tags<CR>" },
         },
+        config = function()
+            local actions = require("telescope.actions")
+            require("telescope").setup({
+                defaults = {
+                    mappings = {
+                        -- <C-j>/<C-k> = move down/up the result list
+                        -- <C-s> = open selection in a horizontal split
+                        -- (applied in both insert and normal mode inside the prompt)
+                        i = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                            ["<C-s>"] = actions.select_horizontal,
+                        },
+                        n = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                            ["<C-s>"] = actions.select_horizontal,
+                        },
+                    },
+                },
+            })
+        end,
     },
 
     -- File tree (replaces NERDTree)
@@ -58,6 +81,9 @@ require("lazy").setup({
     -- Treesitter (syntax highlighting)
     {
         "nvim-treesitter/nvim-treesitter",
+        -- The default branch ("main") is a full, incompatible rewrite that removed
+        -- nvim-treesitter.configs. Pin "master" to keep the legacy API below.
+        branch = "master",
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
