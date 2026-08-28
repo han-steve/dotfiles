@@ -96,6 +96,12 @@ require("lazy").setup({
     -- Tmux navigation
     { "christoomey/vim-tmux-navigator" },
 
+    -- Generate Go tests from source (:GoTests)
+    { "buoto/gotests-vim", ft = "go" },
+
+    -- Go debugging via Delve (vimscript port of nvim-dap workflow)
+    { "sebdah/vim-delve", ft = "go" },
+
     -- Which-key (keybinding hints)
     {
         "folke/which-key.nvim",

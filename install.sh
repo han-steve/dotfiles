@@ -81,6 +81,21 @@ setup_nvim() {
     ok "Neovim configured (lazy.nvim — run nvim to auto-bootstrap)"
 }
 
+# ── Ghostty ──────────────────────────────────────────────────────
+setup_ghostty() {
+    info "Setting up ghostty..."
+    if [[ "$OS" == "Darwin" ]]; then
+        command -v ghostty &>/dev/null || brew install --cask ghostty || warn "ghostty cask install failed"
+        mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
+        ln -sf "$DOTFILES_DIR/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+    else
+        command -v ghostty &>/dev/null || warn "ghostty isn't packaged via apt — install from ghostty.org, config will still be linked"
+        mkdir -p "$HOME/.config/ghostty"
+        ln -sf "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+    fi
+    ok "Ghostty config linked"
+}
+
 # ── Git ──────────────────────────────────────────────────────────
 setup_git() {
     info "Setting up git..."
@@ -161,6 +176,7 @@ main() {
     setup_zsh
     setup_tmux
     setup_nvim
+    setup_ghostty
     setup_git
     setup_starship_config
 

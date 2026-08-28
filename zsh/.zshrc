@@ -1,15 +1,15 @@
 # ── History ───────────────────────────────────────────────────────
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=1000000000
+SAVEHIST=1000000000
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
 
 # ── Options ──────────────────────────────────────────────────────
 setopt AUTO_CD
-setopt CORRECT
 setopt NO_BEEP
 setopt INTERACTIVE_COMMENTS
 
@@ -85,6 +85,12 @@ export LC_ALL="en_US.UTF-8"
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# Krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Go
+export PATH="$HOME/go/bin:$PATH"
+
 # ── fzf ──────────────────────────────────────────────────────────
 if command -v fzf &>/dev/null; then
     # Use fd for fzf if available
@@ -97,6 +103,19 @@ if command -v fzf &>/dev/null; then
     [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
     [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 fi
+
+# ── kubectl completion ──────────────────────────────────────────
+command -v kubectl &>/dev/null && source <(kubectl completion zsh)
+
+# ── Conda (if present) ──────────────────────────────────────────
+if [[ "$(uname -m)" == "arm64" && -f ~/.start_miniforge3.sh ]]; then
+    source ~/.start_miniforge3.sh
+elif [[ "$(uname -m)" == "x86_64" && -f ~/.start_miniconda3.sh ]]; then
+    source ~/.start_miniconda3.sh
+fi
+
+# ── VSCode shell integration ────────────────────────────────────
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
 # ── Starship prompt ─────────────────────────────────────────────
 eval "$(starship init zsh 2>/dev/null)" || true

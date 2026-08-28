@@ -16,6 +16,7 @@ Cross-platform dev environment for macOS and Ubuntu/Debian servers.
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Fast `grep` | grep |
 | [fd](https://github.com/sharkdp/fd) | Better `find` | find |
 | tmux + TPM | Terminal multiplexer | — |
+| [ghostty](https://ghostty.org) | Terminal emulator | iterm2 |
 
 Optional: `kubectl`, `k9s`, `helm` (with `--k8s` flag).
 
@@ -53,6 +54,8 @@ nvim/lua/options.lua    # Editor options
 nvim/lua/keymaps.lua    # Key bindings
 nvim/lua/plugins.lua    # lazy.nvim plugin specs
 tmux/.tmux.conf         # Tmux config (Ctrl-A prefix, vim nav)
+ghostty/config           # Ghostty terminal config (padding, opacity, theme)
+ghostty/ghostty.sh       # Standalone ghostty symlink script
 git/.gitconfig          # Git aliases and defaults
 ```
 
@@ -76,4 +79,5 @@ git/.gitconfig          # Git aliases and defaults
 - `prefix |` — vertical split
 - `prefix -` — horizontal split
 - `prefix r` — reload config
-- `Ctrl+h/j/k/l` — navigate panes (works in nvim too)
+- `Ctrl+h/j/k/l` — navigate panes (works in nvim too, process-tree aware)
+- `prefix h/j/k/l` — navigate panes (fallback without smart switching)
