@@ -55,7 +55,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias tmuxconfig="nvim ~/.tmux.conf"
 
 # Modern replacements
-command -v eza &>/dev/null && alias ls="eza --icons=auto" && alias ll="eza -la --icons=auto --git" && alias tree="eza --tree --icons=auto"
+command -v eza &>/dev/null && alias ls="eza" && alias ll="eza -la --git" && alias tree="eza --tree"
 command -v bat &>/dev/null && alias cat="bat --paging=never --style=plain"
 command -v rg  &>/dev/null && alias grep="rg"
 command -v fd  &>/dev/null && alias find="fd"
